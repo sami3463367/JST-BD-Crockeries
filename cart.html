@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>আমার কার্ট — জেএসটি বিডি ক্রোকারিজ</title>
+  <meta name="description" content="আপনার শপিং কার্ট — পরিমাণ পরিবর্তন করুন ও হোয়াটসঅ্যাপে অর্ডার কনফার্ম করুন।">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <meta name="theme-color" content="#047857">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="page-title">
+      <h1>🛒 আমার কার্ট</h1>
+      <p>পরিমাণ পরিবর্তন করে অর্ডার কনফার্ম করুন</p>
+    </div>
+
+    <div class="empty-box" id="cart-empty" style="display:none">
+      <div class="e-ico">🛒</div>
+      <h2>আপনার কার্ট খালি!</h2>
+      <p>পছন্দের পণ্য কার্টে যোগ করে এখানে দেখুন।</p>
+      <a class="btn btn-primary" href="products.html">🛍️ কেনাকাটা শুরু করুন</a>
+    </div>
+
+    <div class="cart-layout">
+      <div id="cart-items"></div>
+
+      <div class="cart-side">
+        <div class="summary-card" id="cart-summary" style="display:none">
+          <h3>🧾 অর্ডার সামারি</h3>
+          <div class="sum-row"><span>সাবটোটাল</span><span id="sum-subtotal"></span></div>
+          <div class="sum-row"><span>ডেলিভারি চার্জ</span><span id="sum-delivery"></span></div>
+          <div class="sum-row total"><span>সর্বমোট</span><span id="sum-total"></span></div>
+          <div class="free-del-note" id="free-del-note"></div>
+        </div>
+
+        <div class="checkout-card" id="checkout-box" style="display:none">
+          <h3>📦 ডেলিভারির তথ্য দিন</h3>
+          <form id="checkout-form" novalidate>
+            <div class="area-pick">
+              <label><input type="radio" name="area" value="inside" checked><span>📍 ঢাকার ভিতরে<br>৳৬০</span></label>
+              <label><input type="radio" name="area" value="outside"><span>📍 ঢাকার বাইরে<br>৳১২০</span></label>
+            </div>
+            <div class="form-group">
+              <label for="co-name">আপনার নাম <i>*</i></label>
+              <input type="text" id="co-name" placeholder="যেমন: রহিম উদ্দিন" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="co-phone">মোবাইল নম্বর <i>*</i></label>
+              <input type="tel" id="co-phone" inputmode="numeric" placeholder="01XXXXXXXXX" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="co-address">সম্পূর্ণ ঠিকানা <i>*</i></label>
+              <textarea id="co-address" placeholder="বাসা/হোল্ডিং, রোড, এলাকা, থানা, জেলা"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="co-note">অতিরিক্ত নোট (ঐচ্ছিক)</label>
+              <input type="text" id="co-note" placeholder="যেমন: সকাল ১০টার পর ডেলিভারি দেবেন">
+            </div>
+            <div class="cod-box">💵 ক্যাশ অন ডেলিভারি — পণ্য হাতে পেয়ে টাকা দেবেন</div>
+            <button type="submit" class="btn btn-wa btn-big">💬 হোয়াটসঅ্যাপে অর্ডার পাঠান</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/store.js"></script>
+  <script>initCart();</script>
+</body>
+</html>
